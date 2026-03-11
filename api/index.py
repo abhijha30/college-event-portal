@@ -13,8 +13,8 @@ SUPABASE_KEY = os.environ.get("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJz
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # Email Config for Admin
-EMAIL_ID = os.environ.get("EMAIL_ID")
-EMAIL_PASS = os.environ.get("EMAIL_PASS")
+EMAIL_ID = os.environ.get("abbhitheboss2004@gmail.com")
+EMAIL_PASS = os.environ.get("Abhiproject30")
 
 @app.route('/')
 def index():
