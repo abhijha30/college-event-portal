@@ -8,7 +8,7 @@ app = Flask(__name__, template_folder='../templates', static_folder='../static')
 app.secret_key = "avinash_bca_project_key"
 
 # Supabase Config - Use Environment Variables in Vercel
-SUPABASE_URL = os.environ.get("ipiftcupgiegaoyivyqx")
+SUPABASE_URL = os.environ.get("https://ipiftcupgieggaoyivyqx.supabase.co")
 SUPABASE_KEY = os.environ.get("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlwaWZ0Y3VwZ2llZ2FveWl2eXF4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMzYwMjEsImV4cCI6MjA4ODgxMjAyMX0.QR5krbmUnKiWmsB6A_WkM1Y8HVijt9jLfbgw91KMaZ8")
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
