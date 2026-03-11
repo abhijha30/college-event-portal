@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Admin Panel - Registration Requests</h3>
+<table class="table bg-white shadow-sm rounded">
+    <thead>
+        <tr>
+            <th>Student</th>
+            <th>Roll No</th>
+            <th>Event</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for reg in registrations %}
+        <tr>
+            <td>{{ reg.profiles.full_name }}</td>
+            <td>{{ reg.profiles.univ_roll }}</td>
+            <td>{{ reg.events.title }}</td>
+            <td><span class="badge {{ 'bg-success' if reg.status == 'sent' else 'bg-warning' }}">{{ reg.status }}</span></td>
+            <td>
+                <a href="/send_pass/{{ reg.id }}" class="btn btn-sm btn-dark">Send Email Pass</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
