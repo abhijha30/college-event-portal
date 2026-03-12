@@ -1,6 +1,8 @@
+import smtplib
 import os
 from flask import Flask, render_template, request, redirect, session, url_for, flash
 from supabase import create_client, Client
+from email.message import EmailMessage
 
 # This calculates the absolute path to the root of your project
 base_dir = os.path.dirname(os.path.abspath(__file__))
