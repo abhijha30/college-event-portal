@@ -2,9 +2,9 @@ import os
 from flask import Flask, render_template, request, redirect, session, url_for, flash
 from supabase import create_client, Client
 
-# FIX: Vercel sees the 'templates' folder at the root level.
-# We use os.path to make the path absolute so Flask never gets lost.
+# This calculates the absolute path to the root of your project
 base_dir = os.path.dirname(os.path.abspath(__file__))
+# Moves up one level from 'api/' to find templates and static
 template_dir = os.path.join(base_dir, '../templates')
 static_dir = os.path.join(base_dir, '../static')
 
@@ -14,10 +14,10 @@ app = Flask(__name__,
 
 app.secret_key = "avinash_bca_project_key"
 
-# Fetching from Vercel Environment Variables
+# Always use Environment Variables for security
 SUPABASE_URL = os.environ.get("SUPABASE_URL")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
-
+supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 EMAIL_ID = os.environ.get("EMAIL_ID")
 EMAIL_PASS = os.environ.get("EMAIL_PASS")
 
