@@ -15,14 +15,11 @@ app = Flask(__name__,
 app.secret_key = "avinash_bca_project_key"
 
 # Always use Environment Variables for security
-SUPABASE_URL = os.environ.get("https://ipiftcupgieggaoyivyqx.supabase.co")
-SUPABASE_KEY = os.environ.get("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlwaWZ0Y3VwZ2llZ2FveWl2eXF4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMzYwMjEsImV4cCI6MjA4ODgxMjAyMX0.QR5krbmUnKiWmsB6A_WkM1Y8HVijt9jLfbgw91KMaZ8")
+SUPABASE_URL = os.environ.get("SUPABASE_URL")
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 EMAIL_ID = os.environ.get("EMAIL_ID")
 EMAIL_PASS = os.environ.get("EMAIL_PASS")
-
-# Initialize Supabase
-supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 
 # -------------------------
